@@ -7,6 +7,7 @@ gem 'pg'
 gem 'thin'
 
 group :test do
+  gem 'factory_girl'
   gem 'rspec-rails'
 end
 
