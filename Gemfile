@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 
 gem 'jquery-rails'
 gem 'pg'
+gem 'schema_plus'
 gem 'thin'
 
 group :test do
