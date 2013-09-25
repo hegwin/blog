@@ -58,6 +58,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     multi_json (1.8.0)
+    pg (0.15.0)
     pg (0.15.0-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -125,6 +126,7 @@ GEM
     valuable (0.9.8)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
