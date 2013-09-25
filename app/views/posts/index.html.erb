@@ -1,12 +1,8 @@
-<h1>Hegwin.Me</h1>
-
 <% @posts.each do |post|%>
   <div class="post container">
     <h2><%= post.title_cn %></h2>
     <div class="body">
       <%= GitHub::Markdown.render_gfm(post.body).html_safe %>
-    <div>
+    </div>
   </div>
 <% end %>
-
-<%= link_to 'New Post', new_post_path %>
