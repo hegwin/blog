@@ -4,9 +4,7 @@
   <div class="post container">
     <h2><%= post.title_cn %></h2>
     <div class="body">
-      <pre>
-        <%= post.body %>
-      </pre>
+      <%= GitHub::Markdown.render_gfm(post.body).html_safe %>
     <div>
   </div>
 <% end %>
