@@ -2,10 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 80px);
+}
+
+.header {
+  padding-top: 80px;
+  height: 140px;
+  text-align: center;
+  h1 {
+    font-size: 80px;  
+    a {
+      color: black;      
+    }
+    a:hover {
+      color: #0088CC;
+      text-decoration: none;
+    }
+  }
+  p.random {
+    margin-top: 40px;
+    color: #AAAAAA;
+  }
+}
+
+.navigation {
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #CCCCCC;
+  font-size: 16px;
+  .menu-container {
+    height: 20px;
+    ul.menu {
+      list-style: none;
+      float: right;
+      li {
+        float: left;
+        a {
+          color: #666666;
+          margin: 0 10px;
+          text-decoration: none;
+        }
+      }
+    }
+    ul.menu:after {
+      clear: both;
+    }
+  }
+}
+
 .post {
   margin: 2em auto 2em;
-  padding: 2em 3em;
+  padding: 26px 40px;
   border: 1px #CCC solid;
   border-radius: 0.5em;
-  box-shadow: 4px 4px 2px #888888;
+  box-shadow: 3px 3px 3px #CCCCCC;
 }
