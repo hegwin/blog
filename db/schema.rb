@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924165700) do
+ActiveRecord::Schema.define(:version => 20130926100101) do
 
   create_table "posts", :force => true do |t|
     t.string   "title_cn"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(:version => 20130924165700) do
     t.index ["slug"], :name => "index_posts_on_slug", :order => {"slug" => :asc}
     t.index ["title_cn"], :name => "index_posts_on_title_cn", :order => {"title_cn" => :asc}
     t.index ["title_en"], :name => "index_posts_on_title_en", :order => {"title_en" => :asc}
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
