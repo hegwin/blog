@@ -13,7 +13,7 @@ body {
   h1 {
     font-size: 80px;  
     a {
-      color: black;      
+      color: #222222;      
     }
     a:hover {
       color: #0088CC;
@@ -31,6 +31,7 @@ body {
   padding: 12px 0;
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #CCCCCC;
+  margin-bottom: 20px;
   font-size: 16px;
   .menu-container {
     height: 20px;
