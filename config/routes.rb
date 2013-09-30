@@ -1,5 +1,5 @@
 Blog::Application.routes.draw do
-  resources :posts
+  resources :posts, only: [:index, :show]
   
   controller :sessions do
     get 'login' => :new
@@ -7,6 +7,9 @@ Blog::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
+  namespace :admin do
+    resources :posts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
