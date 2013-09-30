@@ -1,0 +1,23 @@
+<h2>Listing posts</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Title cn</th>
+      <th>Title en</th>
+      <th>Posted on</th>
+    </tr>
+  </thead>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title_cn, edit_admin_post_path(post), target: "blank" %></td>
+      <td><%= post.title_en%></td>
+      <td><%= post.posted_on%></td>
+    </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to'New Post', new_admin_post_path %>
