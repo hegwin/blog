@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <b>Title en:</b>
-  <%= @post.title_en %>
-</p>
-
-<p>
   <b>Body:</b>
   <%= @post.body %>
 </p>
@@ -20,11 +15,4 @@
   <%= @post.posted_on %>
 </p>
 
-<p>
-  <b>Slug:</b>
-  <%= @post.slug %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
