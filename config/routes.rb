@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get 'about' => "static_page#about"
+
   resources :posts, only: [:index, :show]
   
   controller :sessions do
