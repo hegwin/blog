@@ -66,8 +66,30 @@ body {
 
 .post {
   margin: 2em auto 2em;
-  padding: 26px 40px;
   border: 1px #CCC solid;
   border-radius: 0.5em;
   box-shadow: 3px 3px 3px #CCCCCC;
+  h1 {
+    margin: 26px 40px;
+  }
+  .post-body {
+    margin: 26px 40px;
+    overflow: hidden;
+  }
+  .post-footer {
+    padding: 10px 40px;
+    height: 18px;
+    background-image: linear-gradient(rgba(127, 127, 127, 0), rgba(0, 0, 0, 0.4) 60px);
+    background-repeat: no-repeat;
+    color: #808080;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    .post-time {
+      float: right;
+    }
+  }
+}
+
+.clear {
+  clear: both;
 }

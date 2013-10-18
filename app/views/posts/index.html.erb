@@ -1,8 +1,15 @@
 <% @posts.each do |post|%>
   <div class="post">
-    <h2><%= post.title_cn %></h2>
-    <div class="body">
+    <h1><%= post.title_cn %></h1>
+    <div class="post-body">
       <%= GitHub::Markdown.render_gfm(post.body).html_safe %>
+    </div>
+    
+    <div class="post-footer">
+      <span class="post-time">
+        <%= post.posted_on.strftime("%F") %>
+      </span>
+      <div class="clear"></div>
     </div>
   </div>
 <% end %>
