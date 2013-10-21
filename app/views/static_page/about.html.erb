@@ -1,2 +1,16 @@
-<h2>About</h2>
-<p>Find me in app/views/static_page/about.html.erb</p>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'about_page' %>
+<% end %>
+
+
+<div id="about">
+  <h2>About Hegwin and Hegwin.me</h2>
+
+  <div class="entry">
+    <img src="http://www.bls.gov/ooh/images/p08-to-p09/p098-4-jpg.jpg">
+    <div class="entry-text">
+      <p>When I was young, I dreamt to be a scientist, precisely an astonomer. I once hoped to entitle a star with my own name.</p>
+      <p>I never imaged the scene that I will write codes in front of a computer.</p>
+    </div>
+  </div>
+</div>
