@@ -2,7 +2,7 @@
   <div class="post">
     <h1><%= post.title_cn %></h1>
     <div class="post-body">
-      <%= GitHub::Markdown.render_gfm(post.body).html_safe %>
+      <%= degrade_head(GitHub::Markdown.render_gfm(post.body), 2).html_safe %>
     </div>
     
     <div class="post-footer">
