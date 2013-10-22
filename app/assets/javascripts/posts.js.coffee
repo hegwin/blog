@@ -7,3 +7,9 @@ $ ->
     $(this).addClass $(this).closest('pre').attr('lang')
 
   hljs.initHighlightingOnLoad()
+  
+  $('.submenu').closest('li').hover (->
+    submenu = $(this).find('.submenu').filter(':not(:animated)')
+    submenu.fadeIn()
+  ), ->
+    $(this).find('.submenu').fadeOut()

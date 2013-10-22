@@ -33,7 +33,7 @@ body {
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #CCCCCC;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 16px; 
   .menu-container {
     height: 20px;
     ul.menu {
@@ -41,10 +41,32 @@ body {
       float: right;
       li {
         float: left;
+        position: relative;
         a {
           color: #666666;
           margin: 0 10px;
           text-decoration: none;
+        }
+      }
+      ul.submenu {
+        position: absolute;
+        top: 20px;
+        right: -16px;
+        z-index: 50;
+        list-style: none;
+        text-align: right;
+        display: none;
+        li {
+          a {
+            display: block;
+            width: 120px;
+            background-color: #E9E9E9;
+            border-bottom: 1px solid #E1E1E1;           
+            padding: 0.5em;
+            &:hover {
+              background-color: #F0F0F0;
+            }
+          }
         }
       }
     }
