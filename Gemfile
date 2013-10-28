@@ -10,7 +10,9 @@ gem 'schema_plus'
 gem 'thin'
 
 group :test do
-  gem 'factory_girl'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
   gem 'rspec-rails'
 end
 
