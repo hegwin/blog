@@ -1,6 +1,6 @@
 <% @posts.each do |post|%>
-  <div class="post">
-    <h1><%= post.title_cn %></h1>
+  <div class="post-entry">
+    <h2><%= link_to post.title_cn, post %></h2>
     <div class="post-body">
       <%= degrade_head(GitHub::Markdown.render_gfm(post.body), 2).html_safe %>
     </div>

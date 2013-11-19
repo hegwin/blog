@@ -14,9 +14,8 @@ describe PostsController do
 
   describe "GET show" do
     it "assigns the requested post as @post" do
-      pending "Not impletmented yet"
-      # get :show, {:id => post.to_param}, valid_session
-      # assigns(:post).should eq(post)
+      get :show, {:id => post.to_param}
+      assigns(:post).should eq(post)
     end
   end
 

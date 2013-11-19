@@ -1,18 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="post">
 
-<p>
-  <b>Title cn:</b>
-  <%= @post.title_cn %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
+  <h1><%= @post.title_cn %></h1>
 
-<p>
-  <b>Posted on:</b>
-  <%= @post.posted_on %>
-</p>
+  <div class="post-body">
+    <%= degrade_head(GitHub::Markdown.render_gfm(@post.body), 1).html_safe %>
+  </div>
 
-<%= link_to 'Back', posts_path %>
+  <p>
+    <b>Tags: </b>
+  </p>
+
+  <p>
+    <b>Posted on: </b>
+    <%= @post.posted_on.strftime("%F") %>
+  </p>
+
+  <%= link_to 'Back', posts_path %>
+
+</div>

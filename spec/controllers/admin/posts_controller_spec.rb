@@ -93,7 +93,8 @@ describe Admin::PostsController do
 
       it "redirects to the post" do
         put :update, {:id => one_post.to_param, :post => valid_attributes}
-        response.should redirect_to([:admin, one_post])
+        one_post.reload
+        response.should redirect_to admin_post_path(one_post)
       end
     end
 

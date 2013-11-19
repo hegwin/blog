@@ -7,19 +7,22 @@ body {
   background-repeat: no-repeat;
 }
 
+h1, h2, h3 {
+  a {
+    color: #222222;
+  }
+  a:hover {
+    color: #0088CC;
+    text-decoration: none;
+  }
+}
+
 .header {
   padding-top: 80px;
   height: 140px;
   text-align: center;
   h1 {
-    font-size: 80px;  
-    a {
-      color: #222222;      
-    }
-    a:hover {
-      color: #0088CC;
-      text-decoration: none;
-    }
+    font-size: 80px;
   }
   p.random {
     margin-top: 40px;
@@ -83,15 +86,16 @@ body {
   text-align: center;
   a {
     color: #222222;
-  }  
+  }
 }
 
-.post {
+.post-entry {
   margin: 2em auto 2em;
   border: 1px #CCC solid;
   border-radius: 0.5em;
   box-shadow: 3px 3px 3px #CCCCCC;
-  h1 {
+  h2 {
+    font-size: 38.5px;
     margin: 26px 40px;
   }
   .post-body {
@@ -109,6 +113,13 @@ body {
     .post-time {
       float: right;
     }
+  }
+}
+
+.post {
+  padding: 0.5em 2em;
+  h1 {
+    margin-bottom: 40px;
   }
 }
 

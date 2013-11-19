@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'friendly_id', '~> 4.0.10'
 gem 'github-markdown'
 gem 'jquery-rails'
 gem 'pg'
