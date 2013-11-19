@@ -11,7 +11,7 @@
   <% @posts.each do |post| %>
     <tr>
       <td><%= link_to post.title_cn, edit_admin_post_path(post), target: "blank" %></td>
-      <td><%= post.posted_on%></td>
+      <td><%= post.posted_on.strftime("%F") %></td>
     </tr>
   <% end %>
 </table>

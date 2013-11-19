@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "posts/index" do
+describe "admin/posts/index" do
   before(:each) do
     assign(:posts, [
       stub_model(Post,
@@ -23,8 +23,7 @@ describe "posts/index" do
   it "renders a list of posts" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "h1", :text => "Title Cn".to_s, :count => 2
-    assert_select "div.post-body", :text => "MyText".to_s, :count => 2
-    # assert_select "tr>td", :text => "Slug".to_s, :count => 2
+    assert_select "tr>td>a", :text => "Title Cn".to_s, :count => 2
+    assert_select "tr>td", :text => "2012-01-01".to_s, :count => 2
   end
 end

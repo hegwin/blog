@@ -8,7 +8,7 @@ describe Admin::PostsController do
   end
 
   let(:one_post) { create :post }
-  let(:valid_attributes) { { "title_cn" => "MyString", "title_cn" => "Title", "body" => "Some texts." } }
+  let(:valid_attributes) { { "title_cn" => "MyString", "title_en" => "Title", "body" => "Some texts." } }
 
   describe "GET index" do
     it "assigns all posts as @posts" do
