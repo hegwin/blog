@@ -2,7 +2,7 @@
 
   <p id="notice"><%= notice %></p>
 
-  <h1><%= @post.title_cn %></h1>
+  <h1><%=title @post.title_cn %></h1>
 
   <div class="post-body">
     <%= degrade_head(GitHub::Markdown.render_gfm(@post.body), 1).html_safe %>

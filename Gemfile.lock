@@ -67,6 +67,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.5.0)
+      actionpack
     mime-types (1.25)
     multi_json (1.8.0)
     pg (0.15.0)
@@ -149,6 +151,7 @@ DEPENDENCIES
   friendly_id (~> 4.0.10)
   github-markdown
   jquery-rails
+  meta-tags
   pg
   rails (= 3.2.12)
   rspec-rails
