@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(:version => 20130926100101) do
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.index ["posted_on"], :name => "index_posts_on_posted_on", :order => {"posted_on" => :asc}
-    t.index ["slug"], :name => "index_posts_on_slug", :order => {"slug" => :asc}
-    t.index ["title_cn"], :name => "index_posts_on_title_cn", :order => {"title_cn" => :asc}
-    t.index ["title_en"], :name => "index_posts_on_title_en", :order => {"title_en" => :asc}
+    t.index ["posted_on"], :name => "index_posts_on_posted_on"
+    t.index ["slug"], :name => "index_posts_on_slug"
+    t.index ["title_cn"], :name => "index_posts_on_title_cn"
+    t.index ["title_en"], :name => "index_posts_on_title_en"
   end
 
   create_table "users", :force => true do |t|
