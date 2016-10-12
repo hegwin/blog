@@ -40,7 +40,7 @@ class Admin::PostsController < Admin::AdminController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -59,7 +59,7 @@ class Admin::PostsController < Admin::AdminController
     @post = Post.find(params[:id])
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update_attributes(post_params)
         format.html { redirect_to [:admin, @post], notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -79,5 +79,10 @@ class Admin::PostsController < Admin::AdminController
       format.html { redirect_to admin_posts_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:body, :posted_on, :slug, :title_cn, :title_en)
   end
 end

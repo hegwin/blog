@@ -1,13 +1,12 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "admin/posts/new" do
   before(:each) do
-    assign(:post, stub_model(Post,
-      :title_cn => "MyString",
-      :title_en => "MyString",
-      :body => "MyText",
-      :slug => "MyString"
-    ).as_new_record)
+    @post = assign(:post, build(:post,
+      title_cn: "Title Cn",
+      title_en: "Title En",
+      body: "MyText"
+    ))
   end
 
   it "renders new post form" do

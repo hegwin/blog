@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "admin/posts/edit" do
   before(:each) do
-    @post = assign(:post, stub_model(Post,
+    @post = assign(:post, Post.create(
       :title_cn => "MyString",
       :title_en => "MyString",
       :body => "MyText",

@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "admin/posts/show" do
   before(:each) do
-    @post = assign(:post, stub_model(Post,
+    @post = assign(:post, Post.create(
       :title_cn => "Title Cn",
       :title_en => "Title En",
       :body => "MyText",
@@ -12,8 +12,8 @@ describe "admin/posts/show" do
   it "renders attributes in <p>" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Title Cn/)
-    rendered.should match(/Title En/)
-    rendered.should match(/MyText/)
+    expect(rendered).to match(/Title Cn/)
+    expect(rendered).to match(/Title En/)
+    expect(rendered).to match(/MyText/)
   end
 end

@@ -1,21 +1,19 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "admin/posts/index" do
   before(:each) do
-    assign(:posts, [
-      stub_model(Post,
+    assign(:posts, [ 
+      create(:post,
         :title_cn => "Title Cn",
-        :title_en => "Title En",
+        :title_en => "Title En 1",
         :body => "MyText",
-        :slug => "Slug",
-        :posted_on => "2012-01-01"
+        :posted_on => Time.new(2012, 1, 1, 12)
       ),
-      stub_model(Post,
+      create(:post,
         :title_cn => "Title Cn",
-        :title_en => "Title En",
+        :title_en => "Title En 2",
         :body => "MyText",
-        :slug => "Slug",
-        :posted_on => "2012-01-01"
+        :posted_on => Time.new(2012, 1, 1, 12)
       )
     ])
   end

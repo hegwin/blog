@@ -1,16 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the PostsHelper. For example:
-#
-# describe PostsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-describe PostsHelper do
+RSpec.describe PostsHelper, type: :helper do
   describe "#degreade_head" do
     it "should degrade the header level in html" do
       html = %q[
@@ -35,7 +25,7 @@ describe PostsHelper do
           </body>
         </html>
       ]
-      helper.degrade_head(html, 2).should eq expected_html
+      expect(helper.degrade_head(html, 2)).to eq expected_html
     end
   end
 end
