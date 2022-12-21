@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("posted_on DESC")
+    @posts = Post.order(posted_on: :desc)
 
     respond_to do |format|
       format.html # index.html.erb
