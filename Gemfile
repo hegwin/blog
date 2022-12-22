@@ -9,10 +9,10 @@ gem 'thin'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'friendly_id', '~> 4.0.10'
-gem 'github-markdown'
 gem 'jquery-rails'
 gem 'meta-tags', require: 'meta_tags'
 gem 'bcrypt', '~> 3.1.7'
+gem 'redcarpet'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
