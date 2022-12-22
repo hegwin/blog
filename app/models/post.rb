@@ -1,9 +1,9 @@
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   # extends ...................................................................
   extend FriendlyId
 
   # security (i.e. attr_accessible) ...........................................
-  attr_accessible :body, :posted_on, :slug, :title_cn, :title_en
+  # attr_accessible :body, :posted_on, :slug, :title_cn, :title_en
 
   # validations ...............................................................
   validates :title_cn, :title_en, :body, presence: true

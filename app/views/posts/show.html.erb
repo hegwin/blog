@@ -5,7 +5,7 @@
   <h1><%=title @post.title_cn %></h1>
 
   <div class="post-body">
-    <%= degrade_head(GitHub::Markdown.render_gfm(@post.body), 1).html_safe %>
+    <%= degrade_head(Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true).render(@post.body), 1).html_safe %>
   </div>
 
   <p>
