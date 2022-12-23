@@ -1,11 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe StaticPageController do
 
   describe "GET 'about'" do
     it "returns http success" do
       get 'about'
-      response.should be_success
+      expect(response).to be_successful
     end
   end
 

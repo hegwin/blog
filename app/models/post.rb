@@ -8,6 +8,6 @@ class Post < ApplicationRecord
   private
 
   def should_generate_new_friendly_id?
-    posted_on > 7.days.ago && title_en_changed?
+    slug.blank? || posted_on > 7.days.ago && title_en_changed?
   end
 end
