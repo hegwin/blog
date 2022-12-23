@@ -2,7 +2,7 @@ class Admin::PostsController < Admin::AdminController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order(:posted_on)
+    @posts = Post.order(posted_on: :desc)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Admin::PostsController < Admin::AdminController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,13 +34,13 @@ class Admin::PostsController < Admin::AdminController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -56,10 +56,10 @@ class Admin::PostsController < Admin::AdminController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update_attributes(post_params)
         format.html { redirect_to [:admin, @post], notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -72,12 +72,18 @@ class Admin::PostsController < Admin::AdminController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @post.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_posts_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title_cn, :title_en, :body, :posted_on)
   end
 end

@@ -1,13 +1,13 @@
 class Post < ApplicationRecord
-  # extends ...................................................................
   extend FriendlyId
 
-  # security (i.e. attr_accessible) ...........................................
-  # attr_accessible :body, :posted_on, :slug, :title_cn, :title_en
+  validates :title_cn, :title_en, :body, :posted_on, presence: true
 
-  # validations ...............................................................
-  validates :title_cn, :title_en, :body, presence: true
-
-  # additional config .........................................................
   friendly_id :title_en, use: :slugged
+
+  private
+
+  def should_generate_new_friendly_id?
+    posted_on > 7.days.ago && title_en_changed?
+  end
 end
