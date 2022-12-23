@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :post do
     title_cn  { Faker::Lorem.sentence }
     title_en  { Faker::Lorem.sentence }

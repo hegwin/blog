@@ -1,16 +1,16 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "posts/index" do
   before(:each) do
     assign(:posts, [
-      stub_model(Post,
+      Post.new(
         :title_cn => "Title Cn",
         :title_en => "Title En 1",
         :body => "MyText",
         :slug => "Slug",
         :posted_on => "2012-01-01"
       ),
-      stub_model(Post,
+      Post.new(
         :title_cn => "Title Cn",
         :title_en => "Title En 2",
         :body => "MyText",

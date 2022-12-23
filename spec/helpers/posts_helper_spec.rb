@@ -35,7 +35,7 @@ describe PostsHelper do
           </body>
         </html>
       ]
-      helper.degrade_head(html, 2).should eq expected_html
+      expect(helper.degrade_head(html, 2)).to eq expected_html
     end
   end
 end
