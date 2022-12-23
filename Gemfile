@@ -31,7 +31,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
 end
