@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source ENV['RAILS_ENV'] == 'production' ? 'https://gems.ruby-china.com' : 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.6'
