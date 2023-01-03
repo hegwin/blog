@@ -7,7 +7,15 @@ $ ->
     $(this).addClass $(this).closest('pre').attr('lang')
 
   hljs.initHighlightingOnLoad()
-  
+
+  renderMathInElement?(document.body, {
+    delimiters: [
+      {left: '$$$', right: '$$$', display: true},
+      {left: '$', right: '$', display: false}
+    ],
+    throwOnError: false
+  })
+
   $('.submenu').closest('li').hover (->
     submenu = $(this).find('.submenu').filter(':not(:animated)')
     submenu.fadeIn()

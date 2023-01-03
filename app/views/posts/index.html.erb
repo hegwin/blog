@@ -1,10 +1,12 @@
+<%= render 'layouts/katex' %>
+
 <% @posts.each do |post|%>
   <div class="post-entry">
     <h2><%= link_to post.title_cn, post %></h2>
     <div class="post-body">
       <%= degrade_head(Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true).render(post.body),2).html_safe %>
     </div>
-    
+
     <div class="post-footer">
       <span class="post-time">
         <%= post.posted_on.strftime("%F") %>
