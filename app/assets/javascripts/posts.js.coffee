@@ -11,7 +11,10 @@ $ ->
   renderMathInElement?(document.body, {
     delimiters: [
       {left: '$$$', right: '$$$', display: true},
-      {left: '$', right: '$', display: false}
+      {left: '$', right: '$', display: false},
+      {left: "\\begin{bmatrix}", right: "\\end{bmatrix}", display: true},
+      {left: "\\begin{smallmatrix}", right: "\\end{smallmatrix}", display: false},
+
     ],
     throwOnError: false
   })
