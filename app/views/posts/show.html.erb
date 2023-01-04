@@ -12,6 +12,11 @@
 
   <p>
     <b>Tags: </b>
+    <% tag_cloud(@post.tags, %w(css1 css2 css3 tag-link)) do |tag, css_class| %>
+      <%= link_to posts_path(tag: tag.name), class: css_class do %>
+        <span class="label label-inverse"><%= tag.name %></span>
+      <% end %>
+    <% end %>
   </p>
 
   <p>

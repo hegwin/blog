@@ -5,6 +5,7 @@ ruby '2.7.6'
 
 gem 'rails', '~> 5.2.0'
 
+gem 'acts-as-taggable-on', '~> 8.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false # reduces boot times through caching
 gem 'coffee-rails', '~> 4.2'

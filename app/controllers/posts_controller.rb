@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.order(posted_on: :desc)
+    if params[:tag].present?
+      @posts = @posts.tagged_with(params[:tag])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.friendly.find(params[:id])
+    @post = Post.friendly.includes(:tags).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

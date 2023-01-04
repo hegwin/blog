@@ -10,28 +10,35 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="control-group field">
     <%= f.label :title_cn, class: "control-label" %>
     <div class="controls">
       <%= f.text_field :title_cn, class: "input-xxlarge" %>
     </div>
   </div>
-    
+
   <div class="control-group field">
     <%= f.label :title_en, class: "control-label" %>
     <div class="controls">
       <%= f.text_field :title_en, class: "input-xxlarge" %>
     </div>
   </div>
-    
+
+  <div class="control-group field">
+    <%= f.label :tag_list, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :tag_list, class: "input-xxlarge", value: @post.tag_list.join(', ') %>
+    </div>
+  </div>
+
   <div class="control-group field">
     <%= f.label :body, class: "control-label" %>
     <div class="controls">
       <%= f.text_area :body, class: "input-xxlarge", rows: 20 %>
     </div>
   </div>
-    
+
   <div class="control-group field">
     <%= f.label :posted_on, class: "control-label" %>
     <div class="controls">

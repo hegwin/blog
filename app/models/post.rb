@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   extend FriendlyId
 
+  acts_as_taggable_on :tags
+
   validates :title_cn, :title_en, :body, :posted_on, presence: true
 
   friendly_id :title_en, use: :slugged

@@ -36,7 +36,7 @@ h1, h2, h3 {
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #CCCCCC;
   margin-bottom: 20px;
-  font-size: 16px; 
+  font-size: 16px;
   .menu-container {
     height: 20px;
     ul.menu {
@@ -64,7 +64,7 @@ h1, h2, h3 {
             display: block;
             width: 120px;
             background-color: #E9E9E9;
-            border-bottom: 1px solid #E1E1E1;           
+            border-bottom: 1px solid #E1E1E1;
             padding: 0.5em;
             &:hover {
               background-color: #F0F0F0;
@@ -120,6 +120,20 @@ h1, h2, h3 {
   padding: 0.5em 2em;
   h1 {
     margin-bottom: 40px;
+  }
+}
+
+.post a.tag-link {
+  margin-right: 4px;
+  opacity: 0.6;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  };
+
+  span.label {
+    padding: 4px 12px;
   }
 }
 
