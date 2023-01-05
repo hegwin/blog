@@ -41,6 +41,7 @@ end
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'public/system', 'storage'
 
+before 'deploy:publishing', 'sitemap:create'
 after 'deploy:publishing', 'thin:restart'
 
 # Default value for default_env is {}

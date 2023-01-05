@@ -13,6 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/public/sitemap.*
 
 # Ingore all swap files.
 *.swp

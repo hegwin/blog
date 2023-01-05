@@ -15,6 +15,7 @@ gem 'meta-tags', require: 'meta_tags'
 gem 'pg'
 gem 'redcarpet'
 gem 'sass-rails', '~> 5.0'
+gem 'sitemap_generator'
 gem 'thin'
 gem 'turbolinks', '~> 5' # https://github.com/turbolinks/turbolinks
 gem 'uglifier', '>= 1.3.0'
