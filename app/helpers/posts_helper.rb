@@ -7,4 +7,12 @@ module PostsHelper
     end
     html
   end
+
+  def display_meta_tags_for_post(post)
+    display_meta_tags \
+      title: post.title_cn,
+      keywords: post.tag_list.join(', '),
+      description: [post.title_cn, post.title_en].join(', '),
+      canonical: post_url(post, host: 'https://hegwin.me')
+  end
 end
