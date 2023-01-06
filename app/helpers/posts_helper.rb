@@ -15,4 +15,12 @@ module PostsHelper
       description: [post.title_cn, post.title_en].join(', '),
       canonical: post_url(post, host: 'https://hegwin.me')
   end
+
+  def display_post_tags(tag_list)
+    tag_list.each.with_index do |tag, i|
+      css_classes = 'tag-link'
+      css_classes << ' tag-link-primary' if i.zero?
+      yield tag, css_classes
+    end
+  end
 end
