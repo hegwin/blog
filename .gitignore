@@ -17,6 +17,7 @@
 
 # Ingore all swap files.
 *.swp
+*.swo
 *~
 
 # Ingnore KPF file
