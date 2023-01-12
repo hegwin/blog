@@ -11,6 +11,7 @@ gem 'bootsnap', '>= 1.1.0', require: false # reduces boot times through caching
 gem 'coffee-rails', '~> 4.2'
 gem 'friendly_id', '~> 5.4.0'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'meta-tags', require: 'meta_tags'
 gem 'pg'
 gem 'redcarpet'

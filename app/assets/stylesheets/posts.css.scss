@@ -82,8 +82,15 @@ h1, h2, h3 {
   }
 }
 
+#pagination {
+  margin-top: 3em;
+  a {
+    color: #222222;
+  }
+}
+
 .footer {
-  margin: 50px auto 30px;
+  margin: 2em auto 30px;
   padding-top: 30px;
   border-top: 1px solid #CCCCCC;
   text-align: center;
@@ -182,7 +189,7 @@ pre {
   clear: both;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 40px);
   }

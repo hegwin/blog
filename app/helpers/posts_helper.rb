@@ -8,12 +8,21 @@ module PostsHelper
     html
   end
 
+  def default_meta_tags
+    {
+      description: "Build an interdisciplinary knowledge base on programming, math, and neuroscience.",
+      keywords: 'Ruby,Ruby on Rails,CLI,Math,JavasSript,Programming,Git,PostgresQL,Rust'
+    }
+  end
+
   def display_meta_tags_for_post(post)
     display_meta_tags \
-      title: post.title_cn,
       keywords: post.tag_list.join(', '),
       description: [post.title_cn, post.title_en].join(', '),
-      canonical: post_url(post, host: 'https://hegwin.me')
+      canonical: post_url(post, host: 'https://hegwin.me'),
+      og: {
+        title: post.title_en
+      }
   end
 
   def display_post_tags(tag_list)
