@@ -32,6 +32,11 @@
   </div>
 
   <div class="mb-3">
+    <%= f.label :introduction_cn, class: "form-label" %>
+    <%= f.text_area :introduction_cn, class: "form-control", rows: 4 %>
+  </div>
+
+  <div class="mb-3">
     <%= f.label :posted_on, class: "form-label" %>
     <%= f.date_select :posted_on, class: "form-select" %>
   </div>

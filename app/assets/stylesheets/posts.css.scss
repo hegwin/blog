@@ -10,12 +10,12 @@ body {
 
 h1, h2, h3 {
   a {
-    color: #222222;
+    color: var(--bs-gray-dark);
     text-decoration: none;
 
     &:hover {
-      color: #222222;
-      text-shadow: 1px 1px 3px #CCC;
+     color: var(--bs-gray-dark);
+     text-shadow: 0 0 5px #CCC;
     }
   }
 }
@@ -111,6 +111,10 @@ h1, h2, h3 {
   .post-body {
     margin: 26px 40px;
     overflow: hidden;
+  }
+  a.post-intro {
+    color: var(--bs-body-color);
+    text-decoration: none;
   }
   .post-footer {
     height: 40px;
