@@ -1,17 +1,14 @@
 <%= render 'layouts/katex' %>
 
-<% @posts.each do |post|%>
-  <div class="post-entry">
+<% @posts.each.with_index do |post, i| %>
+  <div class="post-entry<%= " post-entry-first" if i.zero? %>">
     <h2><%= link_to post.title_cn, post %></h2>
+    <h2 class="subtitle"><%= link_to post.title_en, post %></h2>
+    <%= render 'post_meta', post: post %>
     <div class="post-body">
-      <%= degrade_head(Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true).render(post.body),2).html_safe %>
-    </div>
-
-    <div class="post-footer">
-      <span class="post-time">
-        <%= post.posted_on.strftime("%F") %>
-      </span>
-      <div class="clear"></div>
+      <%= link_to post, class: "post-intro" do %>
+        <%= truncate post.introduction_cn.presence || post.body, length: 200 %>
+      <%end %>
     </div>
   </div>
 <% end %>

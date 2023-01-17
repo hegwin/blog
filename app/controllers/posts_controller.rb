@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order(posted_on: :desc).page(params[:page]).without_count
+    @posts = Post.order(posted_on: :desc).includes(:tags).page(params[:page]).without_count
     if params[:tag].present?
       @posts = @posts.tagged_with(params[:tag])
     end

@@ -4,28 +4,14 @@
 
 <div class="post">
 
-  <p id="notice"><%= notice %></p>
-
   <h1><%= title @post.title_cn %></h1>
+  <h1 class="subtitle"><%=  @post.title_en %></h1>
+
+  <%= render 'post_meta', post: @post %>
 
   <div class="post-body">
     <%= degrade_head(Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(with_toc_data: true), fenced_code_blocks: true).render(@post.body), 1).html_safe %>
   </div>
 
-  <p>
-    <b>Tags: </b>
-    <% display_post_tags(@post.tag_list) do |tag, css_class| %>
-      <%= link_to posts_path(tag: tag), class: css_class do %>
-        <span class="label label-inverse"><%= tag %></span>
-      <% end %>
-    <% end %>
-  </p>
-
-  <p>
-    <b>Posted on: </b>
-    <%= @post.posted_on.strftime("%F") %>
-  </p>
-
-  <%= link_to 'Back', posts_path %>
-
+  <%= link_to 'Back', :back %>
 </div>

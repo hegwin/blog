@@ -2,20 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$meta-opacity: 0.6;
+
 body {
   font-family: Roboto, "Noto Sans", sans-serif, "Noto Color Emoji";
   background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 60px);
   background-repeat: no-repeat;
 }
 
+div.screen {
+  max-width: 1120px;
+}
+
 h1, h2, h3 {
   a {
     color: var(--bs-gray-dark);
     text-decoration: none;
+    transition: 0.2s all;
 
     &:hover {
-     color: var(--bs-gray-dark);
-     text-shadow: 0 0 5px #CCC;
+      color: var(--bs-gray-dark);
+      text-shadow: 0 0 4px #CCC;
     }
   }
 }
@@ -84,6 +91,7 @@ h1, h2, h3 {
 
 #pagination {
   margin-top: 3em;
+  padding: 0 2em;
   a {
     color: #222222;
   }
@@ -100,33 +108,24 @@ h1, h2, h3 {
 }
 
 .post-entry {
-  margin: 2em auto 2em;
-  border: 1px #CCC solid;
-  border-radius: 0.5em;
-  box-shadow: 3px 3px 3px #CCCCCC;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-bottom: 4rem;
+
+  &-first {
+    margin-top: 2rem;
+  }
   h2 {
-    font-size: 38.5px;
-    margin: 26px 40px;
+    font-size: 30px;
+    &.subtitle {
+      font-size: 22px;
+    }
   }
-  .post-body {
-    margin: 26px 40px;
-    overflow: hidden;
-  }
+
   a.post-intro {
     color: var(--bs-body-color);
     text-decoration: none;
-  }
-  .post-footer {
-    height: 40px;
-    padding: 1em 2em;
-    background-image: linear-gradient(rgba(127, 127, 127, 0), rgba(0, 0, 0, 0.4) 60px);
-    background-repeat: no-repeat;
-    color: #808080;
-    border-bottom-right-radius: 0.4em;
-    border-bottom-left-radius: 0.4em;
-    .post-time {
-      float: right;
-    }
+    line-height: 28px;
   }
 }
 
@@ -137,18 +136,49 @@ h1, h2, h3 {
   }
 }
 
-.post a.tag-link {
-  margin-right: 4px;
-  opacity: 0.6;
-  display: inline-block;
+.post-meta {
+  margin: 12px 0 16px 1px;
 
-  &:hover {
-    text-decoration: none;
-    opacity: 1;
-  };
+  .post-tags {
+    padding: 0;
 
-  span.label {
-    padding: 4px 12px;
+    a.tag-link {
+      margin-right: 4px;
+      opacity: $meta-opacity;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none;
+        opacity: 1;
+      };
+
+      span.badge {
+        padding: 4px 12px;
+        &:before {
+          content: '🏷️';
+          padding-right: 4px;
+        }
+      }
+
+      &-primary {
+        span.badge {
+          padding-left: 10px;
+          &:before {
+            content: '💡';
+            padding-right: 2px;
+          }
+        }
+      }
+    }
+  }
+  .post-create-time {
+    padding: 0;
+    color: rgba(var(--bs-dark-rgb), $meta-opacity);
+    text-align: right;
+    &:before {
+      content: '🗓️';
+      padding-right: 2px;
+    }
   }
 }
 
@@ -198,10 +228,6 @@ pre {
     background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 40px);
   }
 
-  .container {
-    max-width: 100%;
-  }
-
   .header {
     h1 {
       margin-top: 40px;
@@ -216,22 +242,7 @@ pre {
   }
 
   .post-entry {
-    margin: 2em auto 2em;
-    border: 1px #CCC solid;
-    border-radius: 0.5em;
-    box-shadow: 3px 3px 3px #CCCCCC;
-    h2 {
-      font-size: 38.5px;
-      margin: 12px 6px;
-    }
-    .post-body {
-      margin: 12px 6px;
-    }
-    .post-footer {
-      height: 32px;
-      padding: 4px 2em;
-      background-image: linear-gradient(rgba(127, 127, 127, 0), rgba(0, 0, 0, 0.4) 32px);
-    }
+    padding: 12px 6px;
   }
 
   .post {

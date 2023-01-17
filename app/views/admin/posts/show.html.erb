@@ -1,5 +1,5 @@
 <% if notice.present? %>
-  <div class="alert"><%= notice %></div>
+  <div class="alert alert-primary"><%= notice %></div>
 <% end %>
 
 <p>
@@ -23,6 +23,15 @@
     <%= @post.body %>
   </pre>
 </p>
+
+<% if @post.introduction_cn.present? %>
+  <p>
+    <b>Introduction CN:</b>
+    <pre>
+      <%= @post.introduction_cn %>
+    </pre>
+  </p>
+<% end %>
 
 <p>
   <b>Posted on:</b>
