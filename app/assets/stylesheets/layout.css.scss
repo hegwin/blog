@@ -1,0 +1,138 @@
+body {
+  font-family: Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 60px);
+  background-repeat: no-repeat;
+}
+
+div.screen {
+  max-width: 1120px;
+}
+
+a {
+  color: var(--bs-gray-dark);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--bs-gray-dark);
+  }
+}
+
+h1, h2, h3 {
+  a {
+    transition: 0.2s all;
+
+    &:hover {
+      text-shadow: 0 0 4px #CCC;
+    }
+  }
+}
+
+.header {
+  text-align: center;
+  h1 {
+    margin-top: 60px;
+    font-size: 70px;
+  }
+  p.random {
+    display: inline-block;
+    margin: 20px auto 40px;
+    color: var(--bs-gray);
+  }
+}
+
+aside {
+  .sidebar {
+    margin-top: 2rem;
+    text-align: center;
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 51%;
+      margin-bottom: 2.5rem;
+    }
+
+    .signature {
+      font-family: cursive;
+      font-size: 120%;
+      color: var(--bs-gray);
+      margin-bottom: 2rem;
+
+    }
+
+    .sns {
+      img {
+        width: 24px;
+        height: 24px;
+        margin: 0 2px;
+      }
+    }
+  }
+}
+
+.navigation {
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #CCCCCC;
+  margin-bottom: 20px;
+  font-size: 16px;
+  .menu-container {
+    height: 20px;
+    ul.menu {
+      list-style: none;
+      float: right;
+      li {
+        float: left;
+        position: relative;
+        a {
+          color: #666666;
+          margin: 0 10px;
+          text-decoration: none;
+        }
+      }
+      ul.submenu {
+        position: absolute;
+        top: 20px;
+        right: -16px;
+        z-index: 50;
+        list-style: none;
+        text-align: right;
+        display: none;
+        li {
+          a {
+            display: block;
+            width: 120px;
+            background-color: #E9E9E9;
+            border-bottom: 1px solid #E1E1E1;
+            padding: 0.5em;
+            &:hover {
+              background-color: #F0F0F0;
+            }
+          }
+        }
+      }
+    }
+    ul.menu:after {
+      clear: both;
+    }
+  }
+}
+
+#pagination {
+  margin-top: 3em;
+  padding: 0 2em;
+  a {
+    color: #222222;
+  }
+}
+
+.footer {
+  margin: 2em auto 30px;
+  padding-top: 30px;
+  border-top: 1px solid #CCCCCC;
+  text-align: center;
+  a {
+    color: #222222;
+  }
+}

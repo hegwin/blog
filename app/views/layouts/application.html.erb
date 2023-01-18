@@ -20,9 +20,8 @@
         <main class="col-lg-9 col-md-9 col-12 order-md-1 order-2">
           <%= yield %>
         </main>
-        <aside class="col-lg-3 col-md-3 col-12 order-md-2 order-1" style="background-color: red;">
-
-          Something
+        <aside class="col-lg-3 col-md-3 col-12 order-md-2 order-1">
+          <%= render 'layouts/sidebar' %>
         </aside>
       </div>
       <%= render 'layouts/footer' %>

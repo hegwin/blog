@@ -18,7 +18,7 @@ gem 'redcarpet'
 gem 'sass-rails', '~> 5.0'
 gem 'sitemap_generator'
 gem 'thin'
-gem 'turbolinks', '~> 5' # https://github.com/turbolinks/turbolinks
+# gem 'turbolinks', '~> 5' # https://github.com/turbolinks/turbolinks
 gem 'uglifier', '>= 1.3.0'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -29,9 +29,6 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'factory_bot_rails'
