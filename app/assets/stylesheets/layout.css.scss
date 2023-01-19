@@ -1,3 +1,5 @@
+$color-coral: #FC5645;
+
 body {
   font-family: Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
   background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 60px);
@@ -19,10 +21,10 @@ a {
 
 h1, h2, h3 {
   a {
-    transition: 0.2s all;
+    transition: 0.5s color, 0.2s text-shadow;
 
-    &:hover {
-      text-shadow: 0 0 4px #CCC;
+    &:hover, &.hover {
+      color: $color-coral;
     }
   }
 }
@@ -32,6 +34,10 @@ h1, h2, h3 {
   h1 {
     margin-top: 60px;
     font-size: 70px;
+    a:hover {
+      color: var(--bs-gray-dark);
+      text-shadow: 0 0 4px #CCC;
+    }
   }
   p.random {
     display: inline-block;
@@ -44,6 +50,8 @@ aside {
   .sidebar {
     margin-top: 2rem;
     text-align: center;
+    position: sticky;
+    top: 2rem;
 
     .avatar {
       width: 180px;
@@ -119,14 +127,6 @@ aside {
   }
 }
 
-#pagination {
-  margin-top: 3em;
-  padding: 0 2em;
-  a {
-    color: #222222;
-  }
-}
-
 .footer {
   margin: 2em auto 30px;
   padding-top: 30px;
@@ -134,5 +134,24 @@ aside {
   text-align: center;
   a {
     color: #222222;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 40px);
+  }
+
+  .header {
+    h1 {
+      margin-top: 40px;
+      font-size: 60px;
+    }
+    p.random {
+      display: inline-block;
+      font-size: 14px;
+      margin: 16px auto 32px;
+      max-width: 360px;
+    }
   }
 }

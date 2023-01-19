@@ -24,3 +24,10 @@ $ ->
     submenu.fadeIn()
   ), ->
     $(this).find('.submenu').fadeOut()
+
+  $('.post-entry').on('mouseenter', ->
+    $(this).find('h2 a').addClass('hover');
+  )
+  $('.post-entry').on('mouseleave', ->
+    $(this).find('h2 a').removeClass('hover');
+  )

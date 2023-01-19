@@ -17,10 +17,10 @@ describe PostsHelper do
         <html>
           <head><title></title></head>
           <body>
-            <h1>Header 1</h1>
-            <h2>Header 2</h2>
-            <h3>Header 3</h3>
-            <h4>Header 4</h4>
+            <h1 id="1">Header 1</h1>
+            <h2 id="2">Header 2</h2>
+            <h3 id="header-3">Header 3</h3>
+            <h4 id="header-4">Header 4</h4>
           </body>
         </html>
       ]
@@ -28,10 +28,10 @@ describe PostsHelper do
         <html>
           <head><title></title></head>
           <body>
-            <h3>Header 1</h3>
-            <h4>Header 2</h4>
-            <h5>Header 3</h5>
-            <h6>Header 4</h6>
+            <h3 id="1">Header 1</h3>
+            <h4 id="2">Header 2</h4>
+            <h5 id="header-3">Header 3</h5>
+            <h6 id="header-4">Header 4</h6>
           </body>
         </html>
       ]

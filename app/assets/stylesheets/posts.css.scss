@@ -4,8 +4,26 @@
 
 $meta-opacity: 0.6;
 
+@mixin link {
+  opacity: $meta-opacity;
+  display: inline-block;
+  transition: 0.2s opacity;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@mixin gray-block-link {
+  @include link;
+  background-color: var(--bs-gray-dark);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 .post-entry {
-  padding-left: 2em;
+  padding-left: 1.5em;
   padding-right: 2em;
   margin-bottom: 4rem;
 
@@ -27,27 +45,51 @@ $meta-opacity: 0.6;
 }
 
 .post {
-  padding: 0.5em 2em;
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  margin-top: 2rem;
+
   h1 {
-    margin-bottom: 40px;
+    font-size: 30px;
+    &.subtitle {
+      font-size: 22px;
+    }
+  }
+  h2 {
+    font-size: 24px;
+    margin: 28px auto;
+  }
+  h3 {
+    font-size: 20px;
+    margin: 24px auto;
+  }
+  h4 {
+    font-size: 16px;
+    margin: 20px auto;
+  }
+
+  ol, ul {
+    li {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .back-link {
+    margin-top: 24px;
+    @include gray-block-link;
   }
 }
 
 .post-meta {
-  margin: 12px 0 16px 1px;
+  margin: 12px 0 24px 1px;
 
   .post-tags {
     padding: 0;
 
     a.tag-link {
+      @include link;
       margin-right: 4px;
-      opacity: $meta-opacity;
-      display: inline-block;
-
-      &:hover {
-        text-decoration: none;
-        opacity: 1;
-      };
 
       span.badge {
         padding: 4px 12px;
@@ -79,6 +121,14 @@ $meta-opacity: 0.6;
   }
 }
 
+.pagination {
+  margin-top: 3em;
+  padding: 0 2em 0 1.5em;
+  a {
+    @include gray-block-link;
+  }
+}
+
 code, pre {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
@@ -106,8 +156,8 @@ pre code {
 
 pre {
   padding: 9.5px;
-  margin: 0 0 10px;
-  line-height: 20px;
+  margin: 20px 0 20px;
+  line-height: 24px;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;
@@ -121,23 +171,6 @@ pre {
 }
 
 @media (max-width: 767.98px) {
-  body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0) 40px);
-  }
-
-  .header {
-    h1 {
-      margin-top: 40px;
-      font-size: 60px;
-    }
-    p.random {
-      display: inline-block;
-      font-size: 14px;
-      margin: 16px auto 32px;
-      max-width: 360px;
-    }
-  }
-
   .post-entry {
     padding: 12px 6px;
   }
