@@ -1,12 +1,12 @@
 <div class="post-meta row">
-  <div class="post-tags col-9">
+  <div class="post-tags col-sm-9 col-12">
     <% display_post_tags(post.tags) do |tag, css_class| %>
       <%= link_to posts_path(tag: tag.name), class: css_class, rel: 'noindex follow' do %>
         <span class="badge bg-dark"><%= tag.name %></span>
       <% end %>
     <% end %>
   </div>
-  <div class="post-create-time col-3">
+  <div class="post-create-time col-sm-3 col-12">
     <%= post.posted_on.strftime("%F") %>
   </div>
 </div>

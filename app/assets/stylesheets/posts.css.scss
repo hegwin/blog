@@ -179,3 +179,12 @@ pre {
     padding: 0;
   }
 }
+
+@media (max-width: 575.98px) {
+  .post-meta {
+    .post-create-time {
+      text-align: left;
+      margin-top: 12px;
+    }
+  }
+}
