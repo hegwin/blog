@@ -13,6 +13,7 @@ div.screen {
 a {
   color: var(--bs-gray-dark);
   text-decoration: none;
+  display: inline-block;
 
   &:hover {
     color: var(--bs-gray-dark);
@@ -25,6 +26,22 @@ h1, h2, h3 {
 
     &:hover, &.hover {
       color: $color-coral;
+    }
+  }
+}
+
+main {
+  p, li {
+    a {
+      color: $color-coral;
+      display: inline;
+      transition: 0.2s border ease;
+      border-bottom: 2px mistyrose solid;
+
+      &:hover {
+        color: $color-coral;
+        border-bottom-color: $color-coral;
+      }
     }
   }
 }

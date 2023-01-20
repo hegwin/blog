@@ -1,66 +1,32 @@
-<% set_meta_tags title: "About", description: "About Hegwin and His Dream" %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'about' %>
+<% end %>
 
-<div id="about">
-  <h2>About Hegwin and His Dream</h2>
+<div class="post about">
+  <h1><%= title "Hi, I'm Hegwin!" %></h1>
+  <h1 class="subtitle">关于我</h1>
 
-  <div class="entry">
-    <%= image_tag 'about/universe.jpg', class: "img-polaroid" %>
-    <div class="entry-text">
-      <h3>The Astronomer Dream</h3>
-        <p>When I was young, I never imaged that I will sit in front of a computer and write codes.</p>
-        <p>Like most children in China, we share the common dream to be a scientist, and for me, precisely to be an astronomer. I always hoped to entitle a star with my own name.</p>
-    </div>
-    <div class="clear"></div>
-  </div>
+  <p>I graduated from Suzhou University of Technology and Science in 2011 with a degree in Applied Chemistry. However, I changed my major right after graduation - I started my career as a programmer in a biotech company specialising in antibodies and polypeptides.</p>
 
-  <div class="entry">
-    <%= image_tag 'about/interpreter.jpg', class: "img-polaroid" %>
-    <div class="entry-text">
-      <h3>Translator or Chemist or Writer?</h3>
-        <p>However, people will easily forget their original dreams after they grow up.</p>
-        <p>During the years in my junior middle school, I loved English very much. And I told everyone I aspired to be a translator or an interpreter.</p>
-        <p>Did I really like English, or is it just a result of hypnosis -- you have good performance in a subject, and your parents and teacher appreciate you and your classmates admires you so that you have more passion and then get a higher score -- which lead to a positive cycle?</p>
-        <p>Things changed again since I entered the high middle school. Chemistry turned to be my favourite subject. I enjoyed doing experiments in the lab.</p>
-        <p>Well, I also found myself involved in the literature.</p>
-    </div>
-    <div class="clear"></div>
-  </div>
+  <p>Over the past 12 years, I've done a lot of full-stack work. Now I'm a full-time software engineer working remotely. I feel like I'm my own manager and work for myself. Previously, I worked at WeWork, Quesbook, and ShineTech. For more information, you can find me on <%= link_to 'LinkedIn', 'https://www.linkedin.com/in/hegwin-wang-b649836a', target: '_blank', rel: 'me' %>.</p>
 
-  <div class="entry">
-    <%= image_tag 'about/drought.jpg', class: "img-polaroid" %>
-    <div class="entry-text">
-      <h3>Childhood Dream That Didn't Come True</h3>
-        <p>NEMT is a cruel battle for each high school graduate in China. But followed that, there is something else make you headache -- to make a decision for you major subject in the coming four or five years.</p>
-        <p>The huge list of majors can hardly baffle me, because I knew what I wanted to select.</p>
-        <p>But there were still something scared my soul. I remember I was choked just as I saw that item -- Astronomy.</p>
-        <p>Wow, for how many years have I put this dream aside? I felt in dark gray not for my score prevented me to apply astronomy, but for how could I forget my dreams.</p>
-    </div>
-    <div class="clear"></div>
-  </div>
+  <p><img src="https://i.niupic.com/images/2023/01/20/agq6.jpeg" alt="Hegwin's Photo"/><p>
 
-  <div class="entry">
-    <%= image_tag 'about/hacker.jpg', class: "img-polaroid" %>
-    <div class="entry-text">
-      <h3>From Chemist To Programmer</h3>
-        <p>Now, I have been a rubyist for nearly 3 years. I like writing codes. Maybe I will continue coding until someday we no more need this job.</p>
-        <p>I majored applied chemistry in university. I like chemistry, yes, at least in middle school. But the regime and teaching style of university made me lose interests of chemistry.</p>
-        <p>During my second year of university, I learnt VB Programming, which opened a door to the world of codes for me.</p>
-        <p>I try to organize the steps how human solve the problems and to tell the computers by writing codes. I can't be more excited when I saw the right result jumping out of the screen.</p>
-    </div>
-    <div class="clear"></div>
-  </div>
+  <h2>This is my website and lab</h2>
 
-   <div class="entry">
-    <%= image_tag 'about/rainbow_flag.jpg', class: "img-polaroid" %>
-    <div class="entry-text">
-      <h3>Imcomplete Rainbow But Miscellaneous</h3>
-        <p>For some reasons I will not live a common life as a normal person, like the rainbow lacking one band of color. Anyway, it's still colorful, isn't it?</p>
-        <p>I am managing to live a colorful life.</p>
-        <p>I keep learning. I do love translation -- no longer for high scores in school -- since it's really interesting to break the walls between the people from different backgrounds.</p>
-        <p>I attempt to achieve every idea and dream. I begin to learn to play the piano. And I begin to erect this website for me.</p>
-        <p>Wish a <strong>regretless</strong> life!</p>
-    </div>
-    <div class="clear"></div>
-  </div>
+  <p>I started <a href="/">Hegwin.me</a> as a personal blog in 2013. Before that, I wrote technical articles on diandian.com, but it was closed without giving me the opportunity to recover my data. Then I decided to create my own blog, also to showcase my programming skills.</p>
 
+  <p>In my first job, I learned <i>Ruby</i> and <i>PostgresQL</i>. It's amazing that I've been using them for 11 years. They are so powerful that even I sometimes wanted to learn new programming skills, but that which only led to in a "tactical retreat" as I found my current skills were sufficient to cover my needs. People (especially HR and headhunters) always tell me that you shouldn't stick with one  language, but in my opinion, I don't just write Ruby. I solve problems. Solving problems takes a whole set of skills, not just programming.</p>
+
+  <p><img src="https://i.niupic.com/images/2023/01/20/agqg.jpeg" alt="Hegwin with Martz"/><p>
+
+  <h2>New adventure</h2>
+
+  <p>My interest in neuroscience started in 2019, partly because I read an article <a href="https://waitbutwhy.com/2017/04/neuralink.html" target="_blank">Neuralink and the Brain’s Magical Future</a> which really inspired me, and partly because my father had his second stroke that year and I wanted to know what had happened to him.</p>
+
+  <p>I plan to go back to school to study molecular biology and then neuroscience. This is a big uncertainty because I've to leave my current job as a software engineer with pretty good pay. At the same time, I'm not sure if I'm qualified to be a researcher.</p>
+
+  <p>Hmm. I do love to learn; It's worth a try.</p>
+
+  <p class="ps"><b>P.S.</b> This about-me was written during Chinese New Year 2023. I tried to make it simple compared to the previous edition. You can visit <%=link_to 'my old "About"', '/archived_about_2013', rel: 'noindex nofollow' %>, if you want to see how naive and blah-blah I was 10 years ago.</p>
 </div>

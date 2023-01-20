@@ -75,6 +75,10 @@ $meta-opacity: 0.6;
     }
   }
 
+  img {
+    max-width: 100%;
+  }
+
   .back-link {
     margin-top: 24px;
     @include gray-block-link;

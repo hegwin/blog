@@ -15,14 +15,24 @@ module PostsHelper
     }
   end
 
-  def display_meta_tags_for_post(post)
+  def meta_tags_for_post(post)
     display_meta_tags \
       keywords: post.tag_list.join(', '),
       description: [post.title_cn, post.title_en].join(', '),
-      canonical: post_url(post, host: 'https://hegwin.me'),
+      canonical: post_url(post),
       og: {
         title: post.title_en
       }
+  end
+
+  def meta_tags_for_post_list(params)
+    is_with_tags  = params[:tag].present?
+    is_first_page = params[:page].to_i == 1 || params[:page].blank?
+
+    display_meta_tags \
+      canonical: is_first_page ? root_url : root_url(page: params[:page]),
+      noindex: is_with_tags,
+      follow: true
   end
 
   def display_post_tags(tag_list)

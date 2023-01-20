@@ -10,4 +10,8 @@ class RandomResource
     无边落木萧萧下，不尽长江滚滚来。
     长风破浪会有时，直挂云帆济沧海。
   ]
+
+  POEM_EN = [
+    'The hydra-universe twisting its body scaled in stars.'
+  ]
 end
