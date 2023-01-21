@@ -5,23 +5,31 @@
   }
   div.entry {
     margin: 36px auto;
-    padding: 10px;
     border: 1px solid #CCC;
     border-radius: 0.5em;
     img {
       width: 120px;
       position: relative;
       top: -30px;
-      left: 10px;
+      left: 20px;
       display:inline-block;
+      background-color: white;
+      border: 1px solid #CCC;
+      border-radius: 6px;
+      padding: 4px;
     }
     div.entry-text {
       h3 {
         font-size: 16px;
       }
-      width: 700px;
       font-size: 14px;
-      float: right;
+      padding: 0 20px;
     }
+  }
+}
+
+@media (max-width: 767.98px) {
+  #about {
+    padding: 0;
   }
 }
