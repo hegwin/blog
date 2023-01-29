@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  enum status: [:online, :offline]
+
   extend FriendlyId
 
   acts_as_taggable_on :tags

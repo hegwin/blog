@@ -13,6 +13,11 @@
 </p>
 
 <p>
+  <b>Status:</b>
+  <%= @post.status %>
+</p>
+
+<p>
   <b>Tags:</b>
   <%= @post.tag_list %>
 </p>
@@ -38,5 +43,6 @@
   <%= @post.posted_on %>
 </p>
 
+<%= link_to 'Preview', post_path(@post), target: "_blank" %> |
 <%= link_to 'Edit', edit_admin_post_path(@post) %> |
 <%= link_to 'Back', admin_posts_path %>

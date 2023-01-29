@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_13_042405) do
+ActiveRecord::Schema.define(version: 2023_01_29_093425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2023_01_13_042405) do
     t.datetime "updated_at", null: false
     t.text "introduction_cn"
     t.text "introduction_en"
+    t.integer "status", default: 0
     t.index ["posted_on"], name: "index_posts_on_posted_on"
     t.index ["slug"], name: "index_posts_on_slug"
     t.index ["title_cn"], name: "index_posts_on_title_cn"
