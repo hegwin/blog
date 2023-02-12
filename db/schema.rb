@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_29_093425) do
+ActiveRecord::Schema.define(version: 2023_02_12_084159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "external_tokens", force: :cascade do |t|
+    t.string "key"
+    t.jsonb "value", default: {}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_external_tokens_on_key"
+  end
 
   create_table "posts", id: :serial, force: :cascade do |t|
     t.string "title_cn", limit: 255

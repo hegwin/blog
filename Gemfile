@@ -6,6 +6,7 @@ ruby '2.7.6'
 gem 'rails', '~> 5.2.0'
 
 gem 'acts-as-taggable-on', '~> 8.1'
+gem 'baidu-netdisk', require: false
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false # reduces boot times through caching
 gem 'coffee-rails', '~> 4.2'
@@ -20,6 +21,7 @@ gem 'sitemap_generator'
 gem 'thin'
 # gem 'turbolinks', '~> 5' # https://github.com/turbolinks/turbolinks
 gem 'uglifier', '>= 1.3.0'
+gem 'whenever', require: false
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
