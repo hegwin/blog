@@ -5,7 +5,7 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+set :output, "#{path}/log/cron.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -18,6 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+#
+env :PATH, ENV['PATH']
 
 every 1.day do
   rake 'scheduled:db_backup'
