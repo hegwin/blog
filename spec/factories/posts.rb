@@ -4,5 +4,6 @@ FactoryBot.define do
     title_en  { Faker::Lorem.sentence }
     body      { Faker::Lorem.paragraphs.join("\n") }
     posted_on { Time.now }
+    tag_list  { [] }
   end
 end

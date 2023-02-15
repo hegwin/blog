@@ -51,9 +51,11 @@ group :development do
 end
 
 group :test do
+  gem 'codecov'
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

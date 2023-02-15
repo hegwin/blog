@@ -1,6 +1,6 @@
 Blog::Application.routes.draw do
-  get 'about' => "static_page#about"
-  get 'archived_about_2013' => "static_page#archived_about_2013"
+  get 'about' => 'static_page#about'
+  get 'archived_about_2013' => 'static_page#archived_about_2013'
 
   resources :posts, only: [:index, :show]
 
