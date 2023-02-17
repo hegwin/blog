@@ -5,5 +5,6 @@ FactoryBot.define do
     body      { Faker::Lorem.paragraphs.join("\n") }
     posted_on { Time.now }
     tag_list  { [] }
+    status    { :online }
   end
 end
