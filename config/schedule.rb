@@ -24,3 +24,9 @@ env :PATH, ENV['PATH']
 every 1.day do
   rake 'scheduled:db_backup'
 end
+
+every 3.days do
+  # I use create instead of refresh,
+  # because ping Google is not available for some reasons
+  rake 'sitemap:create'
+end

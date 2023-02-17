@@ -24,7 +24,7 @@ SitemapGenerator::Sitemap.create do
   #
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
-  Post.find_each do |post|
+  Post.online.find_each do |post|
     add post_path(post), lastmod: [post.posted_on, post.updated_at].max
   end
 end
