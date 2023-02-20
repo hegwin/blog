@@ -10,7 +10,7 @@
   <%= render 'post_meta', post: @post %>
 
   <div class="post-body">
-    <%= degrade_head(Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(with_toc_data: true), fenced_code_blocks: true).render(@post.body), 1).html_safe %>
+    <%= degrade_head(Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(with_toc_data: true), fenced_code_blocks: true, no_intra_emphasis: true).render(@post.body), 1).html_safe %>
   </div>
 
   <%= link_to '< Back', :back, class: 'back-link' %>
