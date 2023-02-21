@@ -18,6 +18,8 @@ $ ->
         delimiters: [
           {left: '$$$', right: '$$$', display: true},
           {left: '$', right: '$', display: false},
+          {left: "\\begin{align}", right: "\\end{align}", display: true},
+          {left: "\\begin{align*}", right: "\\end{align*}", display: true},
           {left: "\\begin{bmatrix}", right: "\\end{bmatrix}", display: true},
           {left: "\\begin{smallmatrix}", right: "\\end{smallmatrix}", display: false},
         ],
