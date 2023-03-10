@@ -20,6 +20,7 @@ $ ->
           {left: '$', right: '$', display: false},
           {left: "\\begin{align}", right: "\\end{align}", display: true},
           {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+          {left: "\\begin{cases}", right: "\\end{cases}", display: true},
           {left: "\\begin{bmatrix}", right: "\\end{bmatrix}", display: true},
           {left: "\\begin{smallmatrix}", right: "\\end{smallmatrix}", display: false},
         ],

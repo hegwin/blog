@@ -12,6 +12,7 @@ class RandomResource
   ]
 
   POEM_EN = [
-    'The hydra-universe twisting its body scaled in stars.'
+    'The hydra-universe twisting its body scaled in stars.',
+    'The bitterest tears shed over graves are for words left unsaid and deeds left undone.'
   ]
 end
