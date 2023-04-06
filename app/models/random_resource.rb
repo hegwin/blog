@@ -13,6 +13,7 @@ class RandomResource
 
   POEM_EN = [
     'The hydra-universe twisting its body scaled in stars.',
-    'The bitterest tears shed over graves are for words left unsaid and deeds left undone.'
+    'The bitterest tears shed over graves are for words left unsaid and deeds left undone.',
+    'Time doth transfix the flourish set on youth. And delves the parallels in beauty\'s brow.'
   ]
 end

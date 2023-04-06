@@ -68,6 +68,11 @@ $meta-opacity: 0.6;
     margin: 20px auto;
   }
 
+  .post-body > p {
+    line-height: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
   ol, ul {
     li {
       margin-top: 0.5em;
@@ -198,6 +203,10 @@ blockquote {
 }
 
 @media (max-width: 575.98px) {
+  p {
+    font-size: calc((1vh+2vw) * 2.5);
+  }
+
   .post-meta {
     .post-create-time {
       text-align: left;
