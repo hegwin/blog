@@ -1,0 +1,11 @@
+zh:
+  ui:
+    navigation:
+      home: '首页'
+      tools: '工具'
+      wow_battle_pet: '魔兽小宠物'
+      meow_etymons: '喵呜词根'
+      about: '关于'
+  date:
+    formats:
+      default: '%Y年%-m月%-d日'

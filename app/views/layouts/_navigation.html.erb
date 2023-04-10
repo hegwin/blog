@@ -1,15 +1,15 @@
 <nav class="navigation">
   <div class="menu-container">
     <ul class="menu">
-      <li><a href="/">首页</a></li>
+      <li><%= link_to t('ui.navigation.home'), root_path %></li>
       <li>
-        <a href="#">工具</a>
+        <a href="#"><%= t('ui.navigation.tools') %></a>
         <ul class="submenu">
-          <li><a href="https://wow.hegwin.me/pets" target="_blank">魔兽小宠物</a></li>
-          <li><a href="https://www.etymon.online/" target="_blank">喵呜词根</a></li>
+          <li><a href="https://wow.hegwin.me/pets" target="_blank"><%= t('ui.navigation.wow_battle_pet')%></a></li>
+          <li><a href="https://www.etymon.online/" target="_blank"><%= t('ui.navigation.meow_etymons') %></a></li>
         </ul>
       </li>
-      <li><%= link_to "关于", about_path %></li>
+      <li><%= link_to t('ui.navigation.about'), about_path %></li>
     </ul>
   </div>
 </nav>

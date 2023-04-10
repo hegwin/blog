@@ -7,12 +7,15 @@
 
     <%= display_meta_tags default_meta_tags %>
     <%= stylesheet_link_tag    "application", media: "all" %>
+    <% if I18n.locale == :en %>
+      <%= stylesheet_link_tag 'locales/en' %>
+    <% end %>
     <%= javascript_include_tag "application", defer: true %>
     <%= yield :head %>
     <%= render 'layouts/favicon' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body lang="<%=I18n.locale%>">
     <div class="container screen">
       <%= render 'layouts/header' %>
       <%= render 'layouts/navigation' %>

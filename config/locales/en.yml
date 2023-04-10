@@ -30,4 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  ui:
+    navigation:
+      home: 'Home'
+      tools: 'Tools'
+      wow_battle_pet: 'WoW Battle Pet'
+      meow_etymons: 'Meow Etymons'
+      about: 'About'
+  date:
+    formats:
+      default: '%b %d, %Y'

@@ -2,7 +2,12 @@ Blog::Application.routes.draw do
   get 'about' => 'static_page#about'
   get 'archived_about_2013' => 'static_page#archived_about_2013'
 
-  resources :posts, only: [:index, :show]
+  #resources :posts, only: [:index, :show]
+
+  scope '(:locale)', locale: /en|zh/ do
+    resources :posts, only: [:index, :show]
+    root to: 'posts#index'
+  end
 
   controller :sessions do
     get 'login' => :new
@@ -61,7 +66,7 @@ Blog::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => 'posts#index'
+  root to: 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 
