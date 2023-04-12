@@ -5,9 +5,17 @@ class Post < ApplicationRecord
 
   acts_as_taggable_on :tags
 
-  validates :title_cn, :title_en, :body, :posted_on, presence: true
+  validates :title_zh, :title_en, :body_zh, :posted_on, presence: true
 
   friendly_id :title_en, use: :slugged
+
+  def main_title(locale = I18n.locale)
+    locale == :zh ? title_zh : title_en
+  end
+
+  def sub_title(locale = I18n.locale)
+    locale == :zh ? title_en : title_zh
+  end
 
   private
 

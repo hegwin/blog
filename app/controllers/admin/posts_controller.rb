@@ -84,6 +84,6 @@ class Admin::PostsController < Admin::AdminController
   private
 
   def post_params
-    params.require(:post).permit(:title_cn, :title_en, :tag_list, :body, :posted_on, :introduction_cn, :status)
+    params.require(:post).permit(:title_zh, :title_en, :tag_list, :body_zh, :body_en, :posted_on, :introduction_zh, :introduction_en, :status)
   end
 end

@@ -68,7 +68,7 @@ aside {
     margin-top: 2rem;
     text-align: center;
     position: sticky;
-    top: 2rem;
+    top: 2.6rem;
 
     .avatar {
       width: 180px;
@@ -114,12 +114,12 @@ aside {
           color: #666666;
           margin: 0 10px;
           text-decoration: none;
-          height: 32px;
+          height: 28px;
         }
       }
       ul.submenu {
         position: absolute;
-        top: 32px;
+        top: 26px;
         right: -16px;
         z-index: 50;
         list-style: none;
@@ -131,7 +131,7 @@ aside {
             width: 120px;
             background-color: #E9E9E9;
             border-bottom: 1px solid #E1E1E1;
-            padding: 0.5em;
+            padding: 0.2em 0.5em;
             &:hover {
               background-color: #F0F0F0;
             }

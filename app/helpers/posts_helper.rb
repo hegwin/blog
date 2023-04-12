@@ -18,7 +18,7 @@ module PostsHelper
   def meta_tags_for_post(post)
     display_meta_tags \
       keywords: post.tag_list.join(', '),
-      description: [post.title_cn, post.title_en].join(', '),
+      description: [post.title_zh, post.title_en].join(', '),
       canonical: post_url(post),
       og: {
         title: post.title_en

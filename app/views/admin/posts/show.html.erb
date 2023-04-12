@@ -3,12 +3,12 @@
 <% end %>
 
 <p>
-  <b>Title cn:</b>
-  <%= @post.title_cn %>
+  <b>Title ZH:</b>
+  <%= @post.title_zh %>
 </p>
 
 <p>
-  <b>Title en:</b>
+  <b>Title EN:</b>
   <%= @post.title_en %>
 </p>
 
@@ -23,17 +23,33 @@
 </p>
 
 <p>
-  <b>Body:</b>
+  <b>Body ZH:</b>
   <pre>
-    <%= @post.body %>
+    <%= @post.body_zh %>
   </pre>
 </p>
 
-<% if @post.introduction_cn.present? %>
+<% if @post.introduction_zh.present? %>
   <p>
-    <b>Introduction CN:</b>
+    <b>Introduction ZH:</b>
     <pre>
-      <%= @post.introduction_cn %>
+      <%= @post.introduction_zh %>
+    </pre>
+  </p>
+<% end %>
+
+<p>
+  <b>Body EN:</b>
+  <pre>
+    <%= @post.body_en %>
+  </pre>
+</p>
+
+<% if @post.introduction_en.present? %>
+  <p>
+    <b>Introduction EN:</b>
+    <pre>
+      <%= @post.introduction_en %>
     </pre>
   </p>
 <% end %>

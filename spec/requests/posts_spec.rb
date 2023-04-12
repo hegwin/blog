@@ -51,8 +51,8 @@ RSpec.describe 'Posts', type: :request do
 
       expect(response).to have_http_status(200)
       expect(response.body).to include post.title_en
-      expect(response.body).to include post.title_cn
-      expect(response.body).to include '2023-02-14'
+      expect(response.body).to include post.title_zh
+      expect(response.body).to include '2023年2月14日'
       expect(response.body).to include '?tag=PostgresQL'
     end
   end

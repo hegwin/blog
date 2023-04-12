@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_12_084159) do
+ActiveRecord::Schema.define(version: 2023_04_12_065842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,20 +24,21 @@ ActiveRecord::Schema.define(version: 2023_02_12_084159) do
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|
-    t.string "title_cn", limit: 255
+    t.string "title_zh", limit: 255
     t.string "title_en", limit: 255
-    t.text "body"
+    t.text "body_zh"
     t.datetime "posted_on"
     t.string "slug", limit: 255
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "introduction_cn"
+    t.text "introduction_zh"
     t.text "introduction_en"
     t.integer "status", default: 0
+    t.text "body_en"
     t.index ["posted_on"], name: "index_posts_on_posted_on"
     t.index ["slug"], name: "index_posts_on_slug"
-    t.index ["title_cn"], name: "index_posts_on_title_cn"
     t.index ["title_en"], name: "index_posts_on_title_en"
+    t.index ["title_zh"], name: "index_posts_on_title_zh"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
