@@ -41,6 +41,33 @@ RSpec.describe 'Posts', type: :request do
         expect(response.body).to include '?tag=Dynamic+Programming'
       end
     end
+
+    context 'status' do
+      before { post_1.update status: :offline }
+
+      it 'does not show offline post' do
+        get '/'
+
+        expect(response.body).not_to include post_1.title_en
+        expect(response.body).to include post_2.title_en
+      end
+    end
+
+    context 'mobility' do
+      it 'shows ZH content preview by default' do
+        get '/'
+
+        expect(response.body).to include post_1.body_zh.first(50)
+        expect(response.body).to include post_2.body_zh.first(50)
+      end
+
+      it 'shows EN content preview when locale is :en' do
+        get '/en'
+
+        expect(response.body).to include post_1.body_en.first(50)
+        expect(response.body).to include post_2.body_en.first(50)
+      end
+    end
   end
 
   describe 'GET /posts/:friendly-id' do
@@ -54,6 +81,21 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include post.title_zh
       expect(response.body).to include '2023年2月14日'
       expect(response.body).to include '?tag=PostgresQL'
+    end
+
+    context 'mobility' do
+      it 'shows ZH content by default' do
+        get '/posts/postgresql-transaction-and-rollback'
+
+        expect(response.body).to include post.body_zh.split("\n").last
+      end
+
+      it 'shows EN content when locale is :en' do
+        get '/en/posts/postgresql-transaction-and-rollback'
+
+        expect(response.body).to include 'Feb 14, 2023'
+        expect(response.body).to include post.body_en.split("\n").last
+      end
     end
   end
 end

@@ -1,17 +1,15 @@
 class Post < ApplicationRecord
+  extend FriendlyId
+  extend Mobility
+
   enum status: [:online, :offline]
 
-  extend FriendlyId
-
   acts_as_taggable_on :tags
+  translates :title, :body, :introduction
 
   validates :title_zh, :title_en, :body_zh, :posted_on, presence: true
 
   friendly_id :title_en, use: :slugged
-
-  def main_title(locale = I18n.locale)
-    locale == :zh ? title_zh : title_en
-  end
 
   def sub_title(locale = I18n.locale)
     locale == :zh ? title_en : title_zh

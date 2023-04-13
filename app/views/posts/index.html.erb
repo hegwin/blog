@@ -4,12 +4,12 @@
 
 <% @posts.each.with_index do |post, i| %>
   <div class="post-entry<%= " post-entry-first" if i.zero? %>">
-    <h2><%= link_to post.main_title, post %></h2>
+    <h2><%= link_to post.title, post %></h2>
     <h2 class="subtitle"><%= link_to post.sub_title, post %></h2>
     <%= render 'post_meta', post: post %>
     <div class="post-body">
       <%= link_to post, class: "post-intro" do %>
-        <%= truncate post.introduction_zh.presence || post.body_zh, length: 200 %>
+        <%= truncate post.introduction.presence || post.body, length: 200 %>
       <%end %>
     </div>
   </div>

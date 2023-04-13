@@ -67,19 +67,27 @@ RSpec.describe "Admin::Posts", type: :request do
   describe 'POST /admin/posts' do
     let(:valid_attributes) do
       {
-        title_en: 'How to prove Wallis Formula',
         title_zh: '如何证明Wallis公式',
-        body_zh: 'In mathematics, the Wallis product for π, published in 1656 by John Wallis, states that {\displaystyle {\begin{aligned}{\frac {\pi }{2}}&=\prod _{n=1}^{\infty }{\frac {4n^{2}}{4n^{2}-1}}=\prod _{n=1}^{\infty }\left\\[6pt]&={\Big }\cdot {\Big }\cdot {\Big }\cdot {\Big }\cdot \;\cdots \\\end{aligned}}}',
+        title_en: 'How to prove Wallis Formula',
+        body_zh: '在数学上，1656年由John Wallis发表的π的Wallis乘积， 指出 {\displaystyle {\begin{aligned}{\frac {\pi }{2}}&=\prod _{n=1}^{\infty }{\frac {4n^{2}}{4n^{2}-1}}=\prod _{n=1}^{\infty }\left\\[6pt]&={\Big }\cdot {\Big }\cdot {\Big }\cdot {\Big }\cdot \;\cdots \\\end{aligned}}}',
+        body_en: 'In mathematics, the Wallis product for π, published in 1656 by John Wallis, states that {\displaystyle {\begin{aligned}{\frac {\pi }{2}}&=\prod _{n=1}^{\infty }{\frac {4n^{2}}{4n^{2}-1}}=\prod _{n=1}^{\infty }\left\\[6pt]&={\Big }\cdot {\Big }\cdot {\Big }\cdot {\Big }\cdot \;\cdots \\\end{aligned}}}',
         tag_list: 'math',
         posted_on: '2023-02-17'
       }
     end
 
     context 'with valid params' do
-      it 'creates a new Post' do
+      it 'creates a new Post with corresponding params' do
         expect {
           post '/admin/posts', params: { post: valid_attributes }
         }.to change(Post, :count).by(1)
+
+        record = Post.last
+
+        expect(record.title_zh).to eq valid_attributes[:title_zh]
+        expect(record.title_en).to eq valid_attributes[:title_en]
+        expect(record.body_zh).to eq valid_attributes[:body_zh]
+        expect(record.body_en).to eq valid_attributes[:body_en]
       end
 
       it 'redirects to the created post' do
