@@ -9,7 +9,7 @@
     <%= render 'post_meta', post: post %>
     <div class="post-body">
       <%= link_to post, class: "post-intro" do %>
-        <%= truncate post.introduction.presence || post.body, length: 200 %>
+        <%= display_post_truncation(post) %>
       <%end %>
     </div>
   </div>

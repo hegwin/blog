@@ -42,4 +42,12 @@ module PostsHelper
       yield tag, css_classes
     end
   end
+
+  def display_post_truncation(post)
+    if I18n.locale == :en && post.body_en.present?
+      (post.introduction_en.presence || post.body_en).truncate_words(60)
+    else
+      truncate post.introduction.presence || post.body, length: 200
+    end
+  end
 end
