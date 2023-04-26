@@ -2,6 +2,9 @@ Blog::Application.routes.draw do
   get 'about' => 'static_page#about'
   get 'archived_about_2013' => 'static_page#archived_about_2013'
 
+  get 'offline', to: 'static_page#offline', as: :offline
+
+
   #resources :posts, only: [:index, :show]
 
   scope '(:locale)', locale: /en|zh/ do
