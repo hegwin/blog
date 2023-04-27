@@ -19,7 +19,7 @@ module PostsHelper
     display_meta_tags \
       keywords: post.tag_list.join(', '),
       description: [post.title_zh, post.title_en].join(', '),
-      canonical: post_url(post),
+      canonical: post_url(post, locale: I18n.locale == :en ? :en : nil),
       og: {
         title: post.title_en
       }
@@ -28,9 +28,10 @@ module PostsHelper
   def meta_tags_for_post_list(params)
     is_with_tags  = params[:tag].present?
     is_first_page = params[:page].to_i == 1 || params[:page].blank?
+    locale = I18n.locale == :en ? :en : nil
 
     display_meta_tags \
-      canonical: is_first_page ? root_url : root_url(page: params[:page]),
+      canonical: is_first_page ? root_url(locale: locale) : root_url(page: params[:page], locale: locale),
       noindex: is_with_tags,
       follow: true
   end

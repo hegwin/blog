@@ -18,6 +18,7 @@ SitemapGenerator::Sitemap.create do
   # Add '/articles'
   #
   #   add articles_path, :priority => 0.7, :changefreq => 'daily'
+  add '/en'
   add '/about'
   #
   # Add all articles:
@@ -26,5 +27,6 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   Post.online.find_each do |post|
     add post_path(post, locale: nil), lastmod: [post.posted_on, post.updated_at].max
+    add post_path(post, locale: :en), lastmod: [post.posted_on, post.updated_at].max
   end
 end
