@@ -18,6 +18,6 @@ class Post < ApplicationRecord
   private
 
   def should_generate_new_friendly_id?
-    slug.blank? || created_at > 7.days.ago && title_en_changed?
+    new_record? || slug.blank? || created_at > 7.days.ago && title_en_changed?
   end
 end
