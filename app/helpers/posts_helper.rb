@@ -50,4 +50,15 @@ module PostsHelper
       truncate post.introduction.presence || post.body, length: 200
     end
   end
+
+  def link_to_alt_language
+    path_params = request.params.to_h.symbolize_keys
+    locale_params = { locale:  I18n.locale == :en ? nil : :en}
+
+    if path_params[:controller] == 'posts' &&  path_params[:action] == 'index' && path_params[:tag].blank?
+      root_path path_params.except(:action, :controller, :locale).merge(locale_params)
+    else
+      url_for path_params.merge(locale_params)
+    end
+  end
 end

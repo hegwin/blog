@@ -10,6 +10,11 @@
         </ul>
       </li>
       <li><%= link_to t('ui.navigation.about'), about_path %></li>
+      <li>
+        <%= link_to link_to_alt_language, rel: 'alternate' do %>
+          <%= image_tag 'navigation/translation.png', alt: 'Language', height: '24px' %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>

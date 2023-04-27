@@ -97,29 +97,29 @@ aside {
 
 .navigation {
   width: 100%;
-  padding: 12px 0;
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #CCCCCC;
   margin-bottom: 20px;
   font-size: 16px;
   .menu-container {
-    height: 20px;
     ul.menu {
       list-style: none;
-      float: right;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin: 8px 24px;
+      gap: 20px;
       li {
-        float: left;
         position: relative;
         a {
           color: #666666;
-          margin: 0 10px;
           text-decoration: none;
-          height: 28px;
         }
       }
       ul.submenu {
         position: absolute;
-        top: 26px;
+        top: 24px;
         right: -16px;
         z-index: 50;
         list-style: none;
