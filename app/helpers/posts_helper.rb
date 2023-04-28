@@ -15,14 +15,31 @@ module PostsHelper
     }
   end
 
+  def content_meta_tags
+    if request.params[:controller] =~ /^admin|^session/
+      return { noindex: true, nofollow: true }
+    end
+
+    if defined?(@post)
+      meta_tags_for_post(@post)
+    elsif defined?(@posts)
+      meta_tags_for_post_list(params)
+    else
+      default_meta_tags
+    end
+  end
+
   def meta_tags_for_post(post)
-    display_meta_tags \
+    {
       keywords: post.tag_list.join(', '),
-      description: [post.title_zh, post.title_en].join(', '),
+      description: display_post_truncation(post),
       canonical: post_url(post, locale: I18n.locale == :en ? :en : nil),
       og: {
-        title: post.title_en
-      }
+        title: post.title_en,
+        description: display_post_truncation(post),
+        image: post.body.match(/(?<alt>!\[[^\]]*\])\((?<filename>.*?)(?=\"|\))\)/).try(:[], :filename)
+      }.compact
+    }
   end
 
   def meta_tags_for_post_list(params)
@@ -30,7 +47,7 @@ module PostsHelper
     is_first_page = params[:page].to_i == 1 || params[:page].blank?
     locale = I18n.locale == :en ? :en : nil
 
-    display_meta_tags \
+    default_meta_tags.merge \
       canonical: is_first_page ? root_url(locale: locale) : root_url(page: params[:page], locale: locale),
       noindex: is_with_tags,
       follow: true

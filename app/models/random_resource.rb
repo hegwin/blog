@@ -15,7 +15,8 @@ class RandomResource
       'The hydra-universe twisting its body scaled in stars.',
       'The bitterest tears shed over graves are for words left unsaid and deeds left undone.',
       'Time doth transfix the flourish set on youth. And delves the parallels in beauty\'s brow.',
-      'Thoughts grows up by feeding itself with its own words.'
+      'Thoughts grows up by feeding itself with its own words.',
+      'In silence I feel full; With speech I sense emptiness.'
     ]
   }
 end
