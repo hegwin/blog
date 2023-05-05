@@ -35,10 +35,24 @@ module PostsHelper
       description: display_post_truncation(post),
       canonical: post_url(post, locale: I18n.locale == :en ? :en : nil),
       og: {
-        title: post.title_en,
+        title: post.title,
         description: display_post_truncation(post),
-        image: post.body.match(/(?<alt>!\[[^\]]*\])\((?<filename>.*?)(?=\"|\))\)/).try(:[], :filename)
-      }.compact
+        image: post.body.match(/(?<alt>!\[[^\]]*\])\((?<filename>.*?)(?=\"|\))\)/).try(:[], :filename),
+        site_name: 'Hegwin.Me',
+        type: 'article',
+        locale: [
+          I18n.locale == :en ? 'en_US' : 'zh_CN',
+          { alternate: I18n.locale == :en ? 'zh_CN' : 'en_US' }
+        ]
+      }.compact,
+      twitter: {
+        card: 'summary_large_image'
+      },
+      article: {
+        published_time: post.posted_on.to_s(:iso8601),
+        modified_time: post.updated_at.to_s(:iso8601),
+        author: 'https://www.facebook.com/hegwin.wang'
+      }
     }
   end
 
